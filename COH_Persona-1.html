@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COH ERP Workflow & Security Roles</title>
+    <title>COH User Experience v2 | Persona 1</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,10 +14,88 @@
     Confirmation: NEITHER Mermaid JS NOR SVG were used for diagrams. All diagrams are structured HTML/CSS.
     -->
     <style>
+        :root {
+            --apple-bg: #f5f5f7;
+            --apple-text: #1d1d1f;
+            --apple-muted: #6e6e73;
+            --apple-blue: #0071e3;
+            --apple-border: rgba(0, 0, 0, 0.08);
+            --apple-card: rgba(255, 255, 255, 0.88);
+            --apple-shadow: 0 24px 60px -40px rgba(0, 0, 0, 0.45);
+        }
+        html {
+            scroll-behavior: smooth;
+        }
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f0f4f8;
-            color: #333;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Inter", sans-serif;
+            background-color: var(--apple-bg);
+            color: var(--apple-text);
+        }
+        .ux-nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            backdrop-filter: blur(18px);
+            background: rgba(245, 245, 247, 0.86);
+            border-bottom: 1px solid var(--apple-border);
+        }
+        .ux-nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.75rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+        .ux-logo {
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--apple-text);
+            text-decoration: none;
+            letter-spacing: 0.01em;
+        }
+        .ux-nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            align-items: center;
+        }
+        .ux-nav-links a {
+            font-size: 0.9rem;
+            color: var(--apple-muted);
+            text-decoration: none;
+            padding: 0.35rem 0.65rem;
+            border-radius: 999px;
+            transition: all 0.2s ease;
+        }
+        .ux-nav-links a:hover,
+        .ux-nav-links a:focus {
+            color: var(--apple-text);
+            background: rgba(0, 113, 227, 0.12);
+        }
+        .page-shell {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 3rem;
+        }
+        .ux-footer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 1rem;
+            align-items: center;
+            border-top: 1px solid var(--apple-border);
+            padding: 2rem 0 1rem;
+            color: var(--apple-muted);
+        }
+        .ux-footer a {
+            color: var(--apple-blue);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .ux-footer a:hover {
+            text-decoration: underline;
         }
         .section-header {
             color: #003f5c;
@@ -26,11 +104,12 @@
             margin-bottom: 24px;
         }
         .card {
-            background-color: #ffffff;
-            border-radius: 0.75rem; /* rounded-lg */
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
-            padding: 1.5rem; /* p-6 */
-            margin-bottom: 1.5rem; /* mb-6 */
+            background-color: var(--apple-card);
+            border-radius: 1.25rem;
+            box-shadow: var(--apple-shadow);
+            padding: 1.75rem;
+            margin-bottom: 1.75rem;
+            border: 1px solid var(--apple-border);
         }
         .persona-card {
             background-color: #f8fafc; /* light blue-gray */
@@ -127,6 +206,20 @@
 </head>
 <body class="p-4 md:p-8">
 
+    <nav class="ux-nav">
+        <div class="ux-nav-inner">
+            <a class="ux-logo" href="index.html">COH User Experience v2</a>
+            <div class="ux-nav-links">
+                <a href="COH_ERP_Personas_1.html">Overview</a>
+                <a href="COH_Persona-1.html">Persona 1</a>
+                <a href="COH_Persona-2.html">Persona 2</a>
+                <a href="COH_Persona-3.html">Persona 3</a>
+                <a href="COH_Persona-5.html">Persona 5</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-shell">
     <header class="bg-[#003f5c] text-white p-8 text-center shadow-lg rounded-lg mb-8">
         <h1 class="text-4xl md:text-5xl font-black tracking-tight">ERP Workflow & Security Roles</h1>
         <p class="mt-4 text-lg max-w-3xl mx-auto text-gray-300">A Deep Dive into Accounts Payable Processes and Role Interactions within Oracle Cloud for the City of Birmingham.</p>
@@ -489,10 +582,13 @@
 
     </main>
 
-    <footer class="text-center p-6 bg-gray-800 text-gray-400 rounded-lg mt-8">
-        <p>&copy; 2025 City of Birmingham. All rights reserved.</p>
-        <p class="text-sm mt-1">"Grow with the Flow" - Optimizing ERP processes for efficiency.</p>
+    <footer class="ux-footer">
+        <span>Persona 1 • Connected in the v2 Apple-inspired flow.</span>
+        <div class="flex gap-4">
+            <a href="COH_ERP_Personas_1.html">← Back: Overview</a>
+            <a href="COH_Persona-2.html">Next: Persona 2 →</a>
+        </div>
     </footer>
-
+    </div>
 </body>
 </html>
